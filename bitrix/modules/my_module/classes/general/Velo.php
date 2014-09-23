@@ -10,7 +10,7 @@
 
         static $Iblock_id = 99;
         static $property_iblock_id = 100; //айди инфоблока торговых предложений
-
+		static $brend_property_id = 1517; //ID свойства Брэнд
         static $property_id = 1552; //айди свойства связи торговых предложений с элементом
         static $color_property_id = 1254; //айди свойства цветов и размеров
 

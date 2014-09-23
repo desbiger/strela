@@ -38,7 +38,7 @@
 
 		static function GetVeloTypes()
 		{
-			$iblock_id = velo::$Iblock_id;
+			$iblock_id = Velo::$Iblock_id;
 			global $DB;
 			$result = array();
 			$q      = "

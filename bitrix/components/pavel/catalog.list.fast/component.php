@@ -6,20 +6,19 @@
 	CModule::IncludeModule('iblock');
 
 
-
-	$iblock_id = velo::$Iblock_id;
-	$kompred_id = velo::$property_id;
-	$kompred_iblock_id = velo::$property_iblock_id;
-	$color_id = velo::$color_property_id;
+	$iblock_id = Velo::$Iblock_id;
+	$kompred_id = Velo::$property_id;
+	$kompred_iblock_id = Velo::$property_iblock_id;
+	$color_id = Velo::$color_property_id;
 
 	$codes = my::GetPropdertyCodesByIblockID($iblock_id);
 	$or_logik_codes = velo_properties::GetVeloTypes();
 ?>
 
-<!--<pre>-->
-<!--    --><?//print_r($_REQUEST)?>
-<!--    --><?//print_r($or_logik_codes)?>
-<!--</pre>-->
+	<!--<pre>-->
+	<!--    --><? //print_r($_REQUEST)?>
+	<!--    --><? //print_r($or_logik_codes)?>
+	<!--</pre>-->
 
 <?
 	//	magic_quotes_runtime(1);
@@ -35,10 +34,10 @@
 
 		if ($req_value != '' && in_array($request_code, $codes) && !in_array($request_code, $or_logik_codes)) {
 
-//            echo '111';
+			//            echo '111';
 
-            if (count($req_value) > 1) {
-				foreach ($req_value as &$ttt){
+			if (count($req_value) > 1) {
+				foreach ($req_value as &$ttt) {
 					$ttt = "'" . $ttt . "'";
 				}
 				$value = "IN(" . implode(",", $req_value) . ")";
@@ -60,7 +59,7 @@
 		}
 		elseif (in_array($request_code, $or_logik_codes)) {
 
-//            echo '222';
+			//            echo '222';
 
 			if ($dop_where == '') {
 				$dop_where = "WHERE (";
@@ -106,7 +105,7 @@
 
 	if ($_REQUEST['TYPE']) {
 		$request_code = $_REQUEST['TYPE'];
-		$prop_id = velo_properties::GetPropIDByCode($request_code);
+		$prop_id      = velo_properties::GetPropIDByCode($request_code);
 		$q_dop .= "
 					INNER JOIN b_iblock_element_property as {$request_code}
 					ON ({$request_code}.VALUE = 'да' AND
@@ -119,7 +118,7 @@
 	if ($_REQUEST['BRAND']) {
 		$value        = $_REQUEST['BRAND'];
 		$request_code = 'MARKA';
-		$prop_id = velo_properties::GetPropIDByCode($request_code);
+		$prop_id      = velo_properties::GetPropIDByCode($request_code);
 		$q_dop .= "
 					INNER JOIN b_iblock_element_property as {$request_code}
 					ON ({$request_code}.VALUE = '{$value}' AND
@@ -197,8 +196,9 @@ GROUP BY `element`.`ID`
 	$pagen = $html;
 	//--------------------------генерируем постраничную навигацию-------------------------------------
 
+
 ?>
-	<!--		<pre>--><?//print_r($_REQUEST)?><!--</pre>-->
+	<!--		<pre>--><? //print_r($_REQUEST)?><!--</pre>-->
 <?
 	$limit = isset($_REQUEST['PAGEN']) ? "LIMIT " . ($_REQUEST['PAGEN'] * 30) . ",30" : "LIMIT 30";
 	$q = "
@@ -236,7 +236,7 @@ ORDER BY `price`.`PRICE`
 
 
 ?>
-<!--				<pre>--><?//=$q?><!--</pre>-->
+	<!--				<pre>--><? //=$q?><!--</pre>-->
 <?
 	$res = $DB->Query($q);
 	while ($t = $res->Fetch()) {
@@ -252,9 +252,9 @@ ORDER BY `price`.`PRICE`
 	$arResult['NAV_STRING'] = $pagen;
 ?>
 
-<!--<pre>-->
-<!--    --><?//print_r($arResult)?>
-<!--</pre>-->
+	<!--<pre>-->
+	<!--    --><? //print_r($arResult)?>
+	<!--</pre>-->
 
 
 <?

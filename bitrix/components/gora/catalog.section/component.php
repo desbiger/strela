@@ -17,7 +17,7 @@
 			'batteries' => 'Аккумуляторы',
 	);
 	$iblocks = array(
-			'velo-parts' => 64,
+			'velo-parts' => 100,
 	);
 
 

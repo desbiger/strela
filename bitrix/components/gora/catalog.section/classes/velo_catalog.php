@@ -1,6 +1,6 @@
 <?
 
-	class velo_catalog
+	class velo_catalog extends Velo
 	{
 		static $types = array( //мнемонические коды свойств инфоблока
 				'Горные' => 'GORNYE',
@@ -17,7 +17,7 @@
 				'Электро' => 'ELEKTRO',
 		);
 
-		static $prop_id = 739;
+
 
 		static $eges = array( //размеры дисков по возростам детей
 				'от 1,5 до 3 лет' => array(
@@ -46,7 +46,7 @@
 			global $DB;
 
 			$prop_code = self::$types[$type];
-			$prop_id   = self::$prop_id;
+			$prop_id   = Velo::$brend_property_id;
 
 			$result[]  = array(
 					'VALUE' => 'Все',
@@ -91,7 +91,7 @@
 			foreach (self::$eges as $key => $vol) {
 
 				$values = str_replace('"', '\"', $vol[0]);
-				$prop_id = self::$prop_id;
+				$prop_id = Velo::$brend_property_id;
 				$q       = "
 				SELECT
 				  brand.VALUE,
@@ -147,8 +147,8 @@
 		static function getBrends()
 		{
 			global $DB;
-			$prop_id    = self::$prop_id;
-			$compred_id = 783;
+			$prop_id    = Velo::$brend_property_id;
+			$compred_id = Velo::$property_id;
 			$q          = "
 		SELECT
 		  brend.`VALUE`
