@@ -1,0 +1,68 @@
+.option_filter{
+    float: left;
+    padding: 10px;
+}
+.filtr {
+    background-color: #FBFBFB;
+    border: 1px solid #D4D4D4;
+    margin-bottom: 20px;
+    padding: 10px 0 20px 20px;
+}
+
+.tab_left{
+    width: 345px;
+    border-right: 1px solid #D4D4D4;
+    float: left;
+    margin-right: 20px;
+}
+
+.tab_left tr td{
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+
+.select_opt{
+    width: 197px;
+    border: 1px solid #D4D4D4;
+    padding-left: 3px;
+}
+
+.tab_right{
+    width: 340px;
+    float: left;
+    margin-top: 15px;
+}
+
+.tab_right tr td{
+    padding-bottom: 10px;
+}
+.tab_right tr td span{
+    padding-left: 5px;
+    position: relative;
+    top: -2px;
+    color: #000000;
+    display: block;
+    margin-left: 14px;;
+}
+
+.center_sub{
+    margin-top: 20px;
+    text-align: center;
+}
+
+
+.sub4 {
+    background-image: url("/include/image/bg_sub1.png");
+    background-repeat: repeat-x;
+    border: 0 none;
+    border-radius: 5px 5px 5px 5px;
+    color: #FFFFFF;
+    cursor: pointer;
+    font-size: 14px;
+    margin-right: 20px;
+    padding: 3px 7px 5px;
+    width: 86px;
+}
+.price_value{
+    width: 75px;
+}
