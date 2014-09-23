@@ -1,0 +1,36 @@
+.option_filter {
+    float: left;
+    padding: 10px;
+}
+
+.prozrak {
+    opacity: 0.3;
+}
+.count{
+   display: inline-block;
+    margin-left: 10px;
+}
+
+.count1 {
+    width: 17px;
+    height: 12px;
+    background-image: url("/include/image/1.jpg");
+}
+
+.count2 {
+    width: 17px;
+    height: 12px;
+    background-image: url("/include/image/2.jpg");
+}
+
+.count3 {
+    width: 17px;
+    height: 12px;
+    background-image: url("/include/image/3.jpg");
+}
+
+.count4 {
+    width: 17px;
+    height: 12px;
+    background-image: url("/include/image/4.jpg");
+}
